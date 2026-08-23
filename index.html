@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#102a27" />
+  <title>Edinburgh · 4–8 September 2026</title>
+  <style>
+    :root{
+      --ink:#13211f; --muted:#66736f; --paper:#f5f1e8; --card:#fffdf8;
+      --green:#173f38; --green2:#245b50; --gold:#c79a50; --line:#ded8cc;
+      --ok:#dff1e6; --shadow:0 12px 32px rgba(19,33,31,.09);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    a{color:inherit}
+    .hero{background:linear-gradient(135deg,#0f2925 0%,#173f38 55%,#285d52 100%);color:white;padding:54px 20px 42px;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;right:-90px;top:-100px;width:360px;height:360px;border:1px solid rgba(255,255,255,.14);border-radius:50%;box-shadow:0 0 0 55px rgba(255,255,255,.03),0 0 0 110px rgba(255,255,255,.025)}
+    .wrap{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+    .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;font-weight:800;color:#e8c786}
+    h1{font-size:clamp(2.3rem,6vw,5rem);line-height:.95;margin:.4rem 0 1rem;letter-spacing:-.045em}
+    .hero p{max-width:720px;font-size:1.05rem;color:#e7efec;margin:0}
+    .hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px;max-width:760px}
+    .hero-chip{border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);padding:12px 14px;border-radius:14px;backdrop-filter:blur(8px)}
+    .hero-chip b{display:block;font-size:.82rem;color:#fff}.hero-chip span{font-size:.82rem;color:#d5e3df}
+    nav{position:sticky;top:0;z-index:50;background:rgba(245,241,232,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav .wrap{display:flex;gap:8px;padding:10px 16px;overflow:auto;white-space:nowrap}
+    nav a{text-decoration:none;padding:8px 12px;border-radius:999px;font-size:.86rem;font-weight:750;color:#31423e}
+    nav a:hover{background:#e6e0d4}
+    main{max-width:1080px;margin:0 auto;padding:30px 18px 70px}
+    section{scroll-margin-top:70px;margin:0 0 42px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:15px}
+    h2{font-size:clamp(1.6rem,4vw,2.35rem);letter-spacing:-.03em;margin:0}.sub{color:var(--muted);margin:4px 0 0}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+    .span-4{grid-column:span 4}.span-6{grid-column:span 6}.span-8{grid-column:span 8}.span-12{grid-column:span 12}
+    .flight{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .flight .big{font-size:1.9rem;font-weight:850;letter-spacing:-.035em}.flight .route{color:var(--muted);font-size:.9rem}.flight .arrow{font-size:1.4rem;color:var(--gold)}
+    .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;font-size:.74rem;font-weight:800;background:var(--ok);color:#205639}
+    .tag{display:inline-block;padding:4px 8px;border-radius:999px;background:#eee9df;color:#52605d;font-size:.72rem;font-weight:750;margin:2px 2px 2px 0}
+    .time{font-weight:850;color:var(--green);font-variant-numeric:tabular-nums;min-width:58px}
+    .timeline{position:relative}.event{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid #ebe6dd}.event:last-child{border-bottom:0}.event h3{margin:0 0 3px;font-size:1rem}.event p{margin:0;color:var(--muted);font-size:.9rem}
+    .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}.btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;border:1px solid #d9d2c5;background:#fff;padding:8px 10px;border-radius:10px;font-size:.8rem;font-weight:800}.btn:hover{border-color:#9eaa9f;transform:translateY(-1px)}.btn.primary{background:var(--green);color:white;border-color:var(--green)}
+    .weather{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.weather-day{background:#eef3ef;border:1px solid #d8e1dc;border-radius:14px;padding:14px}.weather-day .wdate{font-size:.8rem;color:#53625e;font-weight:800}.weather-day .temp{font-size:1.6rem;font-weight:900;margin:4px 0}.weather-day .meta{font-size:.8rem;color:#5f6d69}.weather-status{color:var(--muted);font-size:.9rem}
+    .place-card h3{margin:0 0 4px;font-size:1.05rem}.place-card p{margin:0;color:var(--muted);font-size:.9rem}.choice{border-left:4px solid var(--gold)}
+    .note{background:#f0e8d7;border:1px solid #ddcfad;border-radius:14px;padding:13px 15px;color:#5b4b2f;font-size:.88rem}
+    .footer{color:#74807c;text-align:center;font-size:.78rem;margin-top:44px}
+    .small{font-size:.82rem;color:var(--muted)}
+    @media(max-width:780px){
+      .hero-grid{grid-template-columns:1fr}.span-4,.span-6,.span-8{grid-column:span 12}.weather{grid-template-columns:1fr}.section-head{display:block}.flight{align-items:flex-start}.flight .big{font-size:1.55rem}.event{grid-template-columns:60px 1fr}.hero{padding-top:42px}
+    }
+  </style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">3 Freunde · Scotland 2026</div>
+    <h1>Edinburgh<br>4–8 September</h1>
+    <p>Ein kompakter Reiseplan für Stadt, Scottish Borders, North Berwick und sehr gutes Essen – alles ohne Mietwagen.</p>
+    <div class="hero-grid">
+      <div class="hero-chip"><b>🏰 Samstag</b><span>Edinburgh · Walking Tour · Leith</span></div>
+      <div class="hero-chip"><b>🥾 Sonntag</b><span>Melrose · Eildon Hills</span></div>
+      <div class="hero-chip"><b>🌊 Montag</b><span>North Berwick · Coast</span></div>
+    </div>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#flights">Flüge</a><a href="#base">Base</a><a href="#weather">Wetter</a><a href="#sat">Sa 5.9.</a><a href="#sun">So 6.9.</a><a href="#mon">Mo 7.9.</a><a href="#links">Quick Links</a>
+</div></nav>
+
+<main>
+<section id="flights">
+  <div class="section-head"><div><h2>✈️ An- & Abreise</h2><p class="sub">easyJet · Zürich ⇄ Edinburgh</p></div></div>
+  <div class="grid">
+    <div class="card span-6">
+      <div class="badge">ANREISE</div>
+      <div class="flight" style="margin-top:10px"><div><div class="route">Fr · 4. September</div><div class="big">EZY3296</div><div class="route">Zürich <span class="arrow">→</span> Edinburgh</div></div><div style="text-align:right"><div class="route">Ankunft</div><div class="big">20:25</div><div class="route">Ortszeit</div></div></div>
+      <div class="links"><a class="btn primary" href="https://www.easyjet.com/EZY3296" target="_blank" rel="noopener">Flight status</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Edinburgh+Airport&destination=18+Brunton+Pl,+Edinburgh+EH7+5EJ,+UK&travelmode=transit" target="_blank" rel="noopener">Airport → Wohnung</a></div>
+    </div>
+    <div class="card span-6">
+      <div class="badge">ABREISE</div>
+      <div class="flight" style="margin-top:10px"><div><div class="route">Di · 8. September</div><div class="big">EZY3295</div><div class="route">Edinburgh <span class="arrow">→</span> Zürich</div></div><div style="text-align:right"><div class="route">Abflug</div><div class="big">10:30</div><div class="route">Ortszeit</div></div></div>
+      <div class="links"><a class="btn primary" href="https://www.easyjet.com/EZY3295" target="_blank" rel="noopener">Flight status</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=18+Brunton+Pl,+Edinburgh+EH7+5EJ,+UK&destination=Edinburgh+Airport&travelmode=transit" target="_blank" rel="noopener">Wohnung → Airport</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="base">
+  <div class="section-head"><div><h2>🏠 Unsere Base</h2><p class="sub">Abbeyhill · praktisch für Old Town, Waverley und Leith</p></div></div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center">
+      <div><div class="eyebrow" style="color:var(--gold)">Unterkunft</div><h3 style="font-size:1.35rem;margin:.3rem 0">18 Brunton Pl, Edinburgh EH7 5EJ</h3><p class="small">Alle Tagesrouten starten bzw. enden hier.</p></div>
+      <div class="links"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=18+Brunton+Pl,+Edinburgh+EH7+5EJ,+UK" target="_blank" rel="noopener">Google Maps</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=18+Brunton+Pl,+Edinburgh+EH7+5EJ,+UK&destination=Edinburgh+Waverley+Station&travelmode=walking" target="_blank" rel="noopener">Zu Fuss → Waverley</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="weather">
+  <div class="section-head"><div><h2>🌦 Wetter</h2><p class="sub">Live-Vorhersage für den jeweiligen Tagesort</p></div><a class="btn" href="https://www.metoffice.gov.uk/weather/forecast/gcvwr3zrw" target="_blank" rel="noopener">Met Office Edinburgh</a></div>
+  <div id="weatherBox" class="weather"><div class="card span-12 weather-status">Wetter wird geladen …</div></div>
+  <p class="small" style="margin-top:9px">Quelle: Open-Meteo. Vorhersagen werden beim Öffnen der Seite live geladen und können sich natürlich ändern.</p>
+</section>
+
+<section id="sat">
+  <div class="section-head"><div><div class="eyebrow" style="color:var(--green2)">Samstag · 5. September</div><h2>🏰 Edinburgh</h2><p class="sub">Old Town, Walking Tour, guter Lunch und Seafood in Leith.</p></div><div class="badge">4 FIXE RESERVATIONEN</div></div>
+  <div class="grid">
+    <div class="card span-8 timeline">
+      <div class="event"><div class="time">08:00</div><div><h3>Edinburgh Larder ✅</h3><p>Frühstück · 15 Blackfriars Street.</p><div class="links"><a class="btn" href="https://edinburghlarder.co.uk/" target="_blank" rel="noopener">Website</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Edinburgh+Larder+15+Blackfriars+Street+Edinburgh" target="_blank" rel="noopener">Maps</a></div></div></div>
+      <div class="event"><div class="time">10:00</div><div><h3>Edinburgh Free Tour ✅</h3><p>10:00–12:00 · Treffpunkt: 154 High St · Booking #374280040.</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=154+High+St,+Edinburgh+EH1+1QS,+UK" target="_blank" rel="noopener">Treffpunkt</a></div></div></div>
+      <div class="event"><div class="time">12:30</div><div><h3>The Devil’s Advocate ✅</h3><p>Lunch · 9 Advocate’s Close · Ref. DMN-16962726444.</p><div class="links"><a class="btn" href="https://www.devilsadvocateedinburgh.co.uk/" target="_blank" rel="noopener">Website</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Devil%27s+Advocate+Edinburgh" target="_blank" rel="noopener">Maps</a></div></div></div>
+      <div class="event"><div class="time">14:00</div><div><h3>Edinburgh frei</h3><p>Royal Mile, Victoria Street, Grassmarket, Castle-Aussenbereich und/oder Calton Hill – je nach Lust.</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Victoria+Street+Edinburgh" target="_blank" rel="noopener">Victoria Street</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Calton+Hill+Edinburgh" target="_blank" rel="noopener">Calton Hill</a></div></div></div>
+      <div class="event"><div class="time">19:15</div><div><h3>Dulse Leith ✅</h3><p>Dinner 19:15–21:15 · modernes Scottish Seafood · 102 Constitution Street.</p><div class="links"><a class="btn primary" href="https://www.dulseleith.com/" target="_blank" rel="noopener">Dulse</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Dulse+Leith+102+Constitution+Street+Edinburgh" target="_blank" rel="noopener">Maps</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=18+Brunton+Pl,+Edinburgh+EH7+5EJ,+UK&destination=Dulse+Leith,+102+Constitution+St,+Edinburgh+EH6+6AW,+UK&travelmode=transit" target="_blank" rel="noopener">Von zuhause</a></div></div></div>
+    </div>
+    <div class="card span-4 choice place-card">
+      <div class="eyebrow" style="color:var(--gold)">Tages-Vibe</div><h3>Old Town → Leith</h3><p>Der dichteste Tag: früh starten, dann nach dem Lunch bewusst Luft lassen. Vor Dulse ggf. kurz nach Hause.</p><div style="margin-top:14px"><span class="tag">Scottish breakfast</span><span class="tag">Walking</span><span class="tag">Whisky</span><span class="tag">Seafood</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sun">
+  <div class="section-head"><div><div class="eyebrow" style="color:var(--green2)">Sonntag · 6. September</div><h2>🥾 Melrose & Eildon Hills</h2><p class="sub">Borders Railway, 2–3 Stunden Natur, Lunch spontan, abends Scottish Gastropub.</p></div></div>
+  <div class="grid">
+    <div class="card span-8 timeline">
+      <div class="event"><div class="time">08:30</div><div><h3>Society Bar & Kitchen</h3><p>Frühstück ohne Reservation · 1 Waterloo Place, nahe Waverley.</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Society+Bar+%26+Kitchen+1+Waterloo+Place+Edinburgh" target="_blank" rel="noopener">Maps</a></div></div></div>
+      <div class="event"><div class="time">~09:30</div><div><h3>Zug Richtung Tweedbank</h3><p>Edinburgh Waverley → Tweedbank, danach Bus/Taxi/Walk nach Melrose.</p><div class="links"><a class="btn primary" href="https://www.scotrail.co.uk/" target="_blank" rel="noopener">ScotRail</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Edinburgh+Waverley&destination=Melrose,+UK&travelmode=transit" target="_blank" rel="noopener">ÖV-Route</a></div></div></div>
+      <div class="event"><div class="time">10:45</div><div><h3>Eildon Hills</h3><p>Ca. 2–3 h Wanderung. Kein Stress: bei Wetter oder Beinen einfach kürzen.</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Eildon+Hills+Melrose+Scotland" target="_blank" rel="noopener">Maps</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Melrose+Abbey+Scotland" target="_blank" rel="noopener">Melrose Abbey</a></div></div></div>
+      <div class="event"><div class="time">~13:30</div><div><h3>Lunch spontan</h3><p>Kein fixer Tisch – je nach Wanderung und Hunger.</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Ship+Inn+Melrose" target="_blank" rel="noopener">The Ship Inn</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Apples+for+Jam+Melrose" target="_blank" rel="noopener">Apples for Jam</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Marmions+Brasserie+Melrose" target="_blank" rel="noopener">Marmions Brasserie</a></div></div></div>
+      <div class="event"><div class="time">~16:30</div><div><h3>Rückfahrt nach Edinburgh</h3><p>Genug Puffer für Dusche / Drink vor dem Dinner.</p></div></div>
+      <div class="event"><div class="time">19:30</div><div><h3>The Scran & Scallie ✅</h3><p>Dinner · Stockbridge · Scottish Gastropub / Michelin Bib Gourmand.</p><div class="links"><a class="btn primary" href="https://scranandscallie.com/" target="_blank" rel="noopener">Website</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Scran+%26+Scallie+Edinburgh" target="_blank" rel="noopener">Maps</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=18+Brunton+Pl,+Edinburgh+EH7+5EJ,+UK&destination=The+Scran+%26+Scallie,+Edinburgh&travelmode=transit" target="_blank" rel="noopener">Von zuhause</a></div></div></div>
+    </div>
+    <div class="card span-4 choice place-card">
+      <div class="eyebrow" style="color:var(--gold)">Lunch Optionen</div><h3>Spontan ist hier richtig</h3><p><b>The Ship Inn</b> für Pub & Pint, <b>Apples for Jam</b> für leichter/independent, <b>Marmions</b> als klassische Brasserie.</p><div class="note" style="margin-top:14px">Provender ist sonntags geschlossen – bewusst nicht eingeplant.</div>
+    </div>
+  </div>
+</section>
+
+<section id="mon">
+  <div class="section-head"><div><div class="eyebrow" style="color:var(--green2)">Montag · 7. September</div><h2>🌊 North Berwick</h2><p class="sub">Küste, Hafen, Seafood-Lunch – zurück nach Leith zum Abschlussdinner.</p></div><div class="badge">2 FIXE RESERVATIONEN</div></div>
+  <div class="grid">
+    <div class="card span-8 timeline">
+      <div class="event"><div class="time">08:00</div><div><h3>Red Kite Café</h3><p>Frühstück nahe zuhause. Danach Richtung Waverley.</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Red+Kite+Cafe+Edinburgh" target="_blank" rel="noopener">Maps</a></div></div></div>
+      <div class="event"><div class="time">~09:15</div><div><h3>Zug nach North Berwick</h3><p>Direkt ab Edinburgh Waverley. Fahrplan kurz vorher nochmals prüfen.</p><div class="links"><a class="btn primary" href="https://www.scotrail.co.uk/" target="_blank" rel="noopener">ScotRail</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Edinburgh+Waverley&destination=North+Berwick,+UK&travelmode=transit" target="_blank" rel="noopener">ÖV-Route</a></div></div></div>
+      <div class="event"><div class="time">~10:00</div><div><h3>North Berwick Coast</h3><p>West Bay / Harbour / Scottish Seabird Centre. Boot nur, wenn Wetter & Seegang passen.</p><div class="links"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=North+Berwick+Harbour+Scotland" target="_blank" rel="noopener">Harbour</a><a class="btn" href="https://www.seabird.org/boats/" target="_blank" rel="noopener">Boat Trips</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=North+Berwick+Law+Scotland" target="_blank" rel="noopener">North Berwick Law</a></div></div></div>
+      <div class="event"><div class="time">12:30</div><div><h3>The Herringbone ✅</h3><p>Lunch · 1–3 Westgate · relaxed, seasonal, seafood-friendly.</p><div class="links"><a class="btn primary" href="https://www.herringbone-northberwick.co.uk/" target="_blank" rel="noopener">Website</a><a class="btn" href="https://maps.app.goo.gl/nsu7Zs5xjgrwQoBX7" target="_blank" rel="noopener">Euer Maps-Link</a></div></div></div>
+      <div class="event"><div class="time">~16:30</div><div><h3>Zurück nach Edinburgh</h3><p>Genug Zeit, kurz nach Hause zu gehen und entspannt nach Leith weiterzuziehen.</p></div></div>
+      <div class="event"><div class="time">19:00</div><div><h3>The Shore Bar & Restaurant ✅</h3><p>Abschlussdinner · Leith Shore · British / modern European · relaxed.</p><div class="links"><a class="btn primary" href="https://www.fishersrestaurants.co.uk/shore-bar-and-restaurant/" target="_blank" rel="noopener">Website</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Shore+Bar+and+Restaurant+Edinburgh" target="_blank" rel="noopener">Maps</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=18+Brunton+Pl,+Edinburgh+EH7+5EJ,+UK&destination=The+Shore+Bar+and+Restaurant,+Edinburgh&travelmode=transit" target="_blank" rel="noopener">Von zuhause</a></div></div></div>
+    </div>
+    <div class="card span-4 choice place-card"><div class="eyebrow" style="color:var(--gold)">Wetterabhängig</div><h3>Boat oder Law?</h3><p>Bei ruhiger See: Boot Richtung Bass Rock. Bei gutem Wanderwetter: North Berwick Law. Bei Regen: Hafen, Seabird Centre, Kaffee – Lunch bleibt fix.</p></div>
+  </div>
+</section>
+
+<section id="links">
+  <div class="section-head"><div><h2>🔗 Quick Links</h2><p class="sub">Alles Wichtige in einem Tap.</p></div></div>
+  <div class="grid">
+    <div class="card span-4 place-card"><h3>🚆 ScotRail</h3><p>Edinburgh ↔ Tweedbank / North Berwick</p><div class="links"><a class="btn primary" href="https://www.scotrail.co.uk/" target="_blank" rel="noopener">Fahrplan</a></div></div>
+    <div class="card span-4 place-card"><h3>✈️ easyJet Tracker</h3><p>Live-Status für EZY3296 / EZY3295</p><div class="links"><a class="btn primary" href="https://www.easyjet.com/ch-de/flug-plan" target="_blank" rel="noopener">Flight Tracker</a></div></div>
+    <div class="card span-4 place-card"><h3>📍 Unterkunft</h3><p>18 Brunton Pl, Edinburgh EH7 5EJ</p><div class="links"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=18+Brunton+Pl,+Edinburgh+EH7+5EJ,+UK" target="_blank" rel="noopener">Maps</a></div></div>
+  </div>
+</section>
+
+<div class="footer">Edinburgh 2026 · private trip page · Zeiten von Restaurants/ÖV kurz vor der Reise nochmals prüfen.</div>
+</main>
+
+<script>
+const trips = [
+  {date:'2026-09-05', label:'Sa 5.9. · Edinburgh', lat:55.9533, lon:-3.1883},
+  {date:'2026-09-06', label:'So 6.9. · Melrose', lat:55.5997, lon:-2.7277},
+  {date:'2026-09-07', label:'Mo 7.9. · North Berwick', lat:56.0580, lon:-2.7229}
+];
+const weatherText = code => {
+  const map={0:'Klar',1:'Meist klar',2:'Teilweise bewölkt',3:'Bewölkt',45:'Nebel',48:'Nebel',51:'Leichter Niesel',53:'Niesel',55:'Starker Niesel',61:'Leichter Regen',63:'Regen',65:'Starker Regen',71:'Leichter Schnee',73:'Schnee',75:'Starker Schnee',80:'Regenschauer',81:'Regenschauer',82:'Starke Schauer',95:'Gewitter',96:'Gewitter/Hagel',99:'Gewitter/Hagel'};
+  return map[code] || 'Wechselhaft';
+};
+async function loadWeather(){
+  const box=document.getElementById('weatherBox');
+  try{
+    const cards=[];
+    for(const t of trips){
+      const url=`https://api.open-meteo.com/v1/forecast?latitude=${t.lat}&longitude=${t.lon}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max&timezone=Europe%2FLondon&start_date=${t.date}&end_date=${t.date}`;
+      const r=await fetch(url); if(!r.ok) throw new Error('weather');
+      const d=await r.json();
+      if(!d.daily || !d.daily.time || !d.daily.time.length) throw new Error('range');
+      cards.push(`<div class="weather-day"><div class="wdate">${t.label}</div><div class="temp">${Math.round(d.daily.temperature_2m_max[0])}° / ${Math.round(d.daily.temperature_2m_min[0])}°</div><div><b>${weatherText(d.daily.weather_code[0])}</b></div><div class="meta">Regen ${d.daily.precipitation_probability_max[0] ?? '–'}% · Wind max. ${Math.round(d.daily.wind_speed_10m_max[0] ?? 0)} km/h</div></div>`);
+    }
+    box.innerHTML=cards.join('');
+  }catch(e){
+    box.innerHTML='<div class="card span-12 weather-status">Die Live-Vorhersage ist für diese Daten noch nicht verfügbar oder konnte gerade nicht geladen werden. Der Met-Office-Link oben funktioniert jederzeit.</div>';
+  }
+}
+loadWeather();
+</script>
+</body>
+</html>
