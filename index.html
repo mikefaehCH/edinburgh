@@ -22,7 +22,9 @@
     h1{font-size:clamp(2.3rem,6vw,5rem);line-height:.95;margin:.4rem 0 1rem;letter-spacing:-.045em}
     .hero p{max-width:720px;font-size:1.05rem;color:#e7efec;margin:0}
     .hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px;max-width:760px}
-    .hero-chip{border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);padding:12px 14px;border-radius:14px;backdrop-filter:blur(8px)}
+    .hero-chip{display:block;min-height:48px;text-decoration:none;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);padding:12px 14px;border-radius:14px;backdrop-filter:blur(8px)}
+    .hero-chip:hover b{text-decoration:underline;text-underline-offset:3px}
+    .hero-chip:focus-visible{outline:2px solid #fff;outline-offset:3px}
     .hero-chip b{display:block;font-size:.82rem;color:#fff}.hero-chip span{font-size:.82rem;color:#d5e3df}
     nav{position:sticky;top:0;z-index:50;background:rgba(245,241,232,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
     nav .wrap{display:flex;gap:8px;padding:10px 16px;overflow:auto;white-space:nowrap}
@@ -59,9 +61,9 @@
     <h1>Edinburgh<br>4–8 September</h1>
     <p>Ein kompakter Reiseplan für Stadt, Scottish Borders, North Berwick und sehr gutes Essen – alles ohne Mietwagen.</p>
     <div class="hero-grid">
-      <div class="hero-chip"><b>🏰 Samstag</b><span>Edinburgh · Walking Tour · Leith</span></div>
-      <div class="hero-chip"><b>🥾 Sonntag</b><span>Melrose · Eildon Hills</span></div>
-      <div class="hero-chip"><b>🌊 Montag</b><span>North Berwick · Coast</span></div>
+      <a class="hero-chip" href="#sat"><b>🏰 Samstag</b><span>Edinburgh · Walking Tour · Leith</span></a>
+      <a class="hero-chip" href="#sun"><b>🥾 Sonntag</b><span>Melrose · Eildon Hills</span></a>
+      <a class="hero-chip" href="#mon"><b>🌊 Montag</b><span>North Berwick · Coast</span></a>
     </div>
   </div>
 </header>
