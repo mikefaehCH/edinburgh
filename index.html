@@ -28,7 +28,7 @@
     .hero-chip b{display:block;font-size:.82rem;color:#fff}.hero-chip span{font-size:.82rem;color:#d5e3df}
     nav{position:sticky;top:0;z-index:50;background:rgba(245,241,232,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
     nav .wrap{display:flex;gap:8px;padding:10px 16px;overflow:auto;white-space:nowrap}
-    nav a{text-decoration:none;padding:8px 12px;border-radius:999px;font-size:.86rem;font-weight:750;color:#31423e}
+    nav a{display:inline-flex;align-items:center;text-decoration:none;padding:8px 12px;border-radius:999px;font-size:.86rem;font-weight:750;color:#31423e}
     nav a:hover{background:#e6e0d4}
     main{max-width:1080px;margin:0 auto;padding:30px 18px 70px}
     section{scroll-margin-top:70px;margin:0 0 42px}
@@ -51,7 +51,10 @@
     .small{font-size:.82rem;color:var(--muted)}
     @media(max-width:780px){
       .hero-grid{grid-template-columns:1fr}.span-4,.span-6,.span-8{grid-column:span 12}.weather{grid-template-columns:1fr}.section-head{display:block}.flight{align-items:flex-start}.flight .big{font-size:1.55rem}.event{grid-template-columns:60px 1fr}.hero{padding-top:42px}
+      nav a,.btn{min-height:44px}
+      section{scroll-margin-top:88px}
     }
+    nav a:focus-visible,.btn:focus-visible{outline:2px solid var(--green);outline-offset:2px}
   </style>
 </head>
 <body>
